@@ -1,0 +1,135 @@
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { animate, Timeline, stagger } from 'animejs';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [],
+  templateUrl: './app.html',
+  styleUrl: './app.css'
+})
+export class App implements AfterViewInit {
+  @ViewChild('bg') bg!: ElementRef;
+  @ViewChild('logo') logo!: ElementRef;
+  @ViewChild('title') title!: ElementRef;
+  @ViewChild('subtitle') subtitle!: ElementRef;
+  @ViewChild('heroImage') heroImage!: ElementRef;
+  @ViewChild('cta') cta!: ElementRef;
+  @ViewChild('discordBtn') discordBtn!: ElementRef;
+  @ViewChild('about') about!: ElementRef;
+  @ViewChild('projects') projects!: ElementRef;
+  @ViewChild('collaborate') collaborate!: ElementRef;
+
+  ngAfterViewInit() {
+    this.initBackground();
+    this.animateHero();
+    this.animateFloatingItems();
+    this.setupIntersectionObserver();
+  }
+
+  private initBackground() {
+    const bgElement = this.bg.nativeElement;
+    for (let i = 0; i < 15; i++) {
+      const circle = document.createElement('div');
+      circle.classList.add('circle');
+      const size = Math.random() * 400 + 200;
+      circle.style.width = `${size}px`;
+      circle.style.height = `${size}px`;
+      circle.style.left = `${Math.random() * 100}%`;
+      circle.style.top = `${Math.random() * 100}%`;
+      bgElement.appendChild(circle);
+    }
+
+    animate('.circle', {
+      translateX: () => (Math.random() - 0.5) * 300,
+      translateY: () => (Math.random() - 0.5) * 300,
+      duration: () => Math.random() * 10000 + 10000,
+      delay: () => Math.random() * 5000,
+      loop: true,
+      easing: 'easeInOutSine'
+    });
+  }
+
+  private animateFloatingItems() {
+    animate('.hung-item', {
+      rotate: () => (Math.random() * 10 - 5),
+      translateY: () => (Math.random() * 40 - 20),
+      duration: () => Math.random() * 3000 + 3000,
+      delay: stagger(500),
+      direction: 'alternate',
+      loop: true,
+      easing: 'easeInOutQuad'
+    });
+  }
+
+  private animateHero() {
+    const tl = new Timeline();
+
+    tl
+      .add(this.logo.nativeElement, {
+        opacity: [0, 1],
+        scale: [0.5, 1],
+        duration: 1000,
+        easing: 'easeOutExpo'
+      })
+      .add(this.title.nativeElement, {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 1200,
+        easing: 'easeOutExpo'
+      }, '-=600')
+      .add(this.subtitle.nativeElement, {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 1200,
+        easing: 'easeOutExpo'
+      }, '-=900')
+      .add(this.heroImage.nativeElement, {
+        opacity: [0, 1],
+        scale: [0.9, 1],
+        duration: 1500,
+        easing: 'easeOutExpo'
+      }, '-=1000')
+      .add([this.cta.nativeElement, this.discordBtn.nativeElement], {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 1000,
+        easing: 'easeOutExpo',
+        delay: stagger(100)
+      }, '-=800');
+  }
+
+  private setupIntersectionObserver() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animateSection(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(this.about.nativeElement);
+    observer.observe(this.projects.nativeElement);
+    observer.observe(this.collaborate.nativeElement);
+  }
+
+  private animateSection(target: Element) {
+    if (target === this.projects.nativeElement) {
+      animate('.project-card', {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        delay: stagger(200),
+        duration: 1000,
+        easing: 'easeOutExpo'
+      });
+    } else {
+      animate(target, {
+        opacity: [0.1, 1],
+        translateY: [20, 0],
+        duration: 1200,
+        easing: 'easeOutExpo'
+      });
+    }
+  }
+}

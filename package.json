@@ -3,7 +3,12 @@
   "version": "0.2.0",
   "description": "A sample package.json",
   "dependencies": {
-    "@primer/css": "17.0.1"
+    "@primer/css": "17.0.1",
+    "animejs": "^4.5.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/animejs": "^3.1.13",
+    "welcome-app": "^0.0.4"
+  }
 }

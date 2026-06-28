@@ -1,0 +1,121 @@
+<div class="bg-elements" #bg></div>
+
+<!-- El Abismo Neón -->
+<div class="abyss-container">
+    <div class="abyss-crack"></div>
+    <div class="abyss-glow"></div>
+</div>
+
+<!-- Galería de Imágenes Colgadas -->
+<div class="floating-gallery">
+    <div class="hung-item" #img1>
+        <div class="thread"></div>
+        <img src="assets/atomic_testing_logo.png" alt="Tech 1">
+    </div>
+    <div class="hung-item" #img2>
+        <div class="thread"></div>
+        <img src="assets/cissia_example.jpg" alt="Tech 2">
+    </div>
+    <div class="hung-item" #img3>
+        <div class="thread"></div>
+        <img src="assets/logo.jpg" alt="Tech 3">
+    </div>
+</div>
+
+<main class="page-wrapper">
+    <!-- Hero Section -->
+    <section class="hero" #hero>
+        <div class="container">
+            <div class="logo-container" #logo>
+                <img src="assets/logo.jpg" alt="Atomic Linux Team Logo" class="main-logo">
+            </div>
+            <h1 #title>Atomic Linux Team</h1>
+            <p #subtitle>Buscando crear un ecosistema amigable y completo para los desarrolladores, combinando el rendimiento de Arch Linux con la fluidez visual de Hyprland.</p>
+
+            <!-- Banner Area -->
+            <div class="banner-container" #heroImage>
+                <div class="banner-glass">
+                    <!-- Aquí iría la imagen del banner. He puesto un placeholder estilizado -->
+                    <div class="banner-placeholder">
+                        <span class="banner-text">ATOMIC LINUX ECOSYSTEM</span>
+                        <div class="banner-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="https://github.com/Atomic-Linux-Team" class="cta-button" #cta>Explorar Organización</a>
+                <a href="https://discord.gg/sXP7zAhPy" class="cta-button secondary" #discordBtn>Unirse a Discord</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" #about>
+        <div class="container">
+            <h2 class="section-title">Sobre Nosotros 👋</h2>
+            <div class="about-content">
+                <p>Nuestro objetivo es automatizar y pulir la experiencia de usuario para crear el entorno de desarrollo definitivo. Nos enfocamos en la optimización profunda y la estética moderna.</p>
+                <div class="badges">
+                    <span class="badge">Arch Linux</span>
+                    <span class="badge">Hyprland</span>
+                    <span class="badge">Open Source</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" #projects>
+        <div class="container">
+            <h2 class="section-title">Proyectos del Ecosistema 🛠️</h2>
+            <div class="project-grid">
+                <div class="project-card" #p1>
+                    <div class="project-header">
+                        <h3>atomic-linux</h3>
+                        <a href="https://github.com/Atomic-Linux-Team/atomic-linux.git" target="_blank">↗</a>
+                    </div>
+                    <p>El núcleo del proyecto. Configuraciones optimizadas y personalización profunda. Una distro base Arch que busca ser genial.</p>
+                </div>
+                <div class="project-card" #p2>
+                    <div class="project-header">
+                        <h3>atomic-tour</h3>
+                        <a href="https://github.com/Atomic-Linux-Team/atomic-tour.git" target="_blank">↗</a>
+                    </div>
+                    <p>La joya de la corona. Una app de bienvenida diseñada para guiar a los nuevos usuarios en su primer contacto con el sistema.</p>
+                </div>
+                <div class="project-card" #p3>
+                    <div class="project-header">
+                        <h3>atomic-repo</h3>
+                        <a href="https://github.com/Atomic-Linux-Team/atomic-repo.git" target="_blank">↗</a>
+                    </div>
+                    <p>El corazón de la máquina. Nuestro propio repositorio para integrar funciones nuevas y paquetes del AUR con un solo comando.</p>
+                </div>
+                <div class="project-card" #p4>
+                    <div class="project-header">
+                        <h3>.github</h3>
+                        <a href="https://github.com/Atomic-Linux-Team/.github" target="_blank">↗</a>
+                    </div>
+                    <p>Plantillas globales, documentación y perfiles. El punto de partida ideal para quienes desean comenzar a contribuir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaborate Section -->
+    <section class="collaborate" #collaborate>
+        <div class="container">
+            <div class="collab-box">
+                <h2 class="section-title">¿Estás Listo para Colaborar? 🚀</h2>
+                <p>Queremos que seas parte de nuestra comunidad. Si sabes de <strong>C, Rust, QML, Lua o Go</strong> (o sabes usar la IA con sabiduría), ¡te estamos buscando!</p>
+                <ul class="collab-steps">
+                    <li><span>1</span> Únete a nuestro servidor de Discord.</li>
+                    <li><span>2</span> Reporta un bug o propón una mejora mediante un <i>Issue</i>.</li>
+                    <li><span>3</span> Obtén el visto bueno de los administradores.</li>
+                    <li><span>4</span> Envía tu Commit y llega a la rama <strong>MainStream</strong>.</li>
+                </ul>
+                <a href="https://discord.gg/sXP7zAhPy" class="cta-button">Ir a Discord ahora</a>
+            </div>
+        </div>
+    </section>
+</main>
