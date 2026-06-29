@@ -16,14 +16,15 @@ export class App implements AfterViewInit {
   @ViewChild('heroImage') heroImage!: ElementRef;
   @ViewChild('cta') cta!: ElementRef;
   @ViewChild('discordBtn') discordBtn!: ElementRef;
+  @ViewChild('donateBtn') donateBtn!: ElementRef;
   @ViewChild('about') about!: ElementRef;
+  @ViewChild('stats') stats!: ElementRef;
   @ViewChild('projects') projects!: ElementRef;
   @ViewChild('collaborate') collaborate!: ElementRef;
 
   ngAfterViewInit() {
     this.initBackground();
     this.animateHero();
-    this.animateFloatingItems();
     this.setupIntersectionObserver();
   }
 
@@ -47,18 +48,6 @@ export class App implements AfterViewInit {
       delay: () => Math.random() * 5000,
       loop: true,
       easing: 'easeInOutSine'
-    });
-  }
-
-  private animateFloatingItems() {
-    animate('.hung-item', {
-      rotate: () => (Math.random() * 10 - 5),
-      translateY: () => (Math.random() * 40 - 20),
-      duration: () => Math.random() * 3000 + 3000,
-      delay: stagger(500),
-      direction: 'alternate',
-      loop: true,
-      easing: 'easeInOutQuad'
     });
   }
 
@@ -90,7 +79,7 @@ export class App implements AfterViewInit {
         duration: 1500,
         easing: 'easeOutExpo'
       }, '-=1000')
-      .add([this.cta.nativeElement, this.discordBtn.nativeElement], {
+      .add([this.cta.nativeElement, this.discordBtn.nativeElement, this.donateBtn.nativeElement], {
         opacity: [0, 1],
         translateY: [20, 0],
         duration: 1000,
@@ -110,6 +99,7 @@ export class App implements AfterViewInit {
     }, { threshold: 0.1 });
 
     observer.observe(this.about.nativeElement);
+    observer.observe(this.stats.nativeElement);
     observer.observe(this.projects.nativeElement);
     observer.observe(this.collaborate.nativeElement);
   }
@@ -122,6 +112,14 @@ export class App implements AfterViewInit {
         delay: stagger(200),
         duration: 1000,
         easing: 'easeOutExpo'
+      });
+    } else if (target === this.stats.nativeElement) {
+      animate('.stat-card', {
+        opacity: [0, 1],
+        scale: [0.8, 1],
+        delay: stagger(150),
+        duration: 1000,
+        easing: 'easeOutBack'
       });
     } else {
       animate(target, {
