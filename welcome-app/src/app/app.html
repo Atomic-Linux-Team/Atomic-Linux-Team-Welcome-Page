@@ -31,7 +31,7 @@
             </div>
             <h1 #title>Atomic Linux Team</h1>
             <p #subtitle>Buscando crear un ecosistema amigable y completo para los desarrolladores, combinando el rendimiento de Arch Linux con la fluidez visual de Hyprland.</p>
-            
+
             <!-- Banner Area -->
             <div class="banner-container" #heroImage>
                 <div class="banner-glass">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="hero-actions">
                 <a href="https://github.com/Atomic-Linux-Team" class="cta-button" #cta>Explorar Organización</a>
                 <a href="https://discord.gg/sXP7zAhPy" class="cta-button secondary" #discordBtn>Unirse a Discord</a>
@@ -55,7 +55,7 @@
         <div class="container">
             <h2 class="section-title">Sobre Nosotros 👋</h2>
             <div class="about-content">
-                <p>Nuestro objetivo es automatizar y pulir la experiencia de usuario para crear el entorno de desarrollo definitivo. Nos enfocamos en la optimización profunda y la estética moderna.</p>
+                <p>Nuestro objetivo es automatizar y optimizar la experiencia de usuario para crear el entorno de desarrollo definitivo. Nos enfocamos en la optimización profunda y la estética moderna,  además de un flujo de trabajo avanzado gracias a nuestro TilingWindowManager, Hyprland.</p>
                 <div class="badges">
                     <span class="badge">Arch Linux</span>
                     <span class="badge">Hyprland</span>
@@ -71,20 +71,20 @@
             <h2 class="section-title">Actividad del Ecosistema 📊</h2>
             <div class="stats-grid">
                 <div class="stat-card" #s1>
-                    <div class="stat-value">4+</div>
-                    <div class="stat-label">Repositorios Activos</div>
+                    <div class="stat-value">{{ metrics?.total_stars || '...' }}</div>
+                    <div class="stat-label">Estrellas Totales</div>
                 </div>
                 <div class="stat-card" #s2>
-                    <div class="stat-value">4+</div>
-                    <div class="stat-label">Miembros Core</div>
+                    <div class="stat-value">{{ metrics?.total_contributors || '...' }}</div>
+                    <div class="stat-label">Colaboradores</div>
                 </div>
                 <div class="stat-card" #s3>
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Código Abierto</div>
+                    <div class="stat-value">{{ metrics?.active_projects || '...' }}</div>
+                    <div class="stat-label">Proyectos Activos</div>
                 </div>
                 <div class="stat-card" #s4>
-                    <div class="stat-value">∞</div>
-                    <div class="stat-label">Pasión por Linux</div>
+                    <div class="stat-value">{{ metrics?.status || '...' }}</div>
+                    <div class="stat-label">Estado de Nuestros Proyectos</div>
                 </div>
             </div>
         </div>
@@ -100,14 +100,14 @@
                         <h3>atomic-linux</h3>
                         <a href="https://github.com/Atomic-Linux-Team/atomic-linux.git" target="_blank">↗</a>
                     </div>
-                    <p>El núcleo del proyecto. Configuraciones optimizadas y personalización profunda. Una distro base Arch que busca ser genial.</p>
+                    <p>El núcleo del proyecto. Configuraciones optimizadas y personalización profunda. Una distro base Arch que busca ser genial, optimizada y lista para picar codigo desde el primer momento.</p>
                 </div>
                 <div class="project-card" #p2>
                     <div class="project-header">
                         <h3>atomic-tour</h3>
                         <a href="https://github.com/Atomic-Linux-Team/atomic-tour.git" target="_blank">↗</a>
                     </div>
-                    <p>La joya de la corona. Una app de bienvenida diseñada para guiar a los nuevos usuarios en su primer contacto con el sistema.</p>
+                    <p>La joya de la corona. Una app de bienvenida diseñada para guiar a los nuevos usuarios en su primer contacto con el sistema, lo que hará que su adapatación al entorno Hyprland sea mas reconfortante, rapida y entretenida, pero por ahora sigue en beta.</p>
                 </div>
                 <div class="project-card" #p3>
                     <div class="project-header">
@@ -121,13 +121,34 @@
                         <h3>.github</h3>
                         <a href="https://github.com/Atomic-Linux-Team/.github" target="_blank">↗</a>
                     </div>
-                    <p>Plantillas globales, documentación y perfiles. El punto de partida ideal para quienes desean comenzar a contribuir.</p>
+                    <p>Plantillas globales, documentación y perfiles. El punto de partida ideal para quienes desean comenzar a contribuir en este proyecto.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Members Section -->
+    <section class="members" #membersSection>
+        <div class="container">
+            <h2 class="section-title">El Nuestro Equipo Actual 👥</h2>
+            <div class="members-grid">
+                <div class="member-card" *ngFor="let member of members">
+                    <div class="member-avatar">
+                        <img [src]="member.avatar" [alt]="member.name">
+                    </div>
+                    <div class="member-info">
+                        <h3>{{ member.name }}</h3>
+                        <p class="member-role">{{ member.role }}</p>
+                        <p class="member-specialty">{{ member.specialty }}</p>
+                        <a [href]="member.github" target="_blank" class="member-link">GitHub ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Collaborate Section -->
+
     <section class="collaborate" #collaborate>
         <div class="container">
             <div class="collab-box">
@@ -139,7 +160,7 @@
                     <li><span>3</span> Obtén el visto bueno de los administradores.</li>
                     <li><span>4</span> Envía tu Commit y llega a la rama <strong>MainStream</strong>.</li>
                 </ul>
-                <a href="https://discord.gg/sXP7zAhPy" class="cta-button">Ir a Discord ahora</a>
+                <a href="https://discord.gg/sXP7zAhPy" class="cta-button">Ir a nuestro Discord :3</a>
             </div>
         </div>
     </section>

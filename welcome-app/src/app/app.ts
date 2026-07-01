@@ -1,14 +1,16 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, OnInit, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { animate, Timeline, stagger } from 'animejs';
+import { MetricsService, OrgMetrics, Member } from './metrics.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements AfterViewInit {
+export class App implements OnInit, AfterViewInit {
   @ViewChild('bg') bg!: ElementRef;
   @ViewChild('logo') logo!: ElementRef;
   @ViewChild('title') title!: ElementRef;
@@ -20,7 +22,51 @@ export class App implements AfterViewInit {
   @ViewChild('about') about!: ElementRef;
   @ViewChild('stats') stats!: ElementRef;
   @ViewChild('projects') projects!: ElementRef;
+  @ViewChild('membersSection') membersSection!: ElementRef;
   @ViewChild('collaborate') collaborate!: ElementRef;
+
+  metrics: OrgMetrics | null = null;
+  members: Member[] = [];
+
+  constructor(private metricsService: MetricsService, private cdr: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.loadMetrics();
+    this.loadMembers();
+  }
+
+  private loadMetrics() {
+    console.log('🔄 Cargando métricas...');
+    this.metricsService.getMetrics().subscribe({
+      next: (data) => {
+        console.log('✅ Datos recibidos del backend:', data);
+        this.metrics = data;
+        this.cdr.detectChanges(); // <--- ¡Aquí obligamos a Angular a despertar y actualizar la UI!
+      },
+      error: (err) => {
+        console.error('❌ Error fatal conectando al backend:', err);
+        this.metrics = {
+          total_stars: 0,
+          total_contributors: 0,
+          active_projects: 0,
+          status: 'Offline'
+        };
+        this.cdr.detectChanges();
+      }
+    });
+  }
+
+  private loadMembers() {
+    console.log('🔄 Cargando miembros...');
+    this.metricsService.getMembers().subscribe({
+      next: (data) => {
+        console.log('✅ Miembros recibidos:', data);
+        this.members = data;
+        this.cdr.detectChanges();
+      },
+      error: (err) => console.error('❌ Error cargando miembros:', err)
+    });
+  }
 
   ngAfterViewInit() {
     this.initBackground();
@@ -101,6 +147,7 @@ export class App implements AfterViewInit {
     observer.observe(this.about.nativeElement);
     observer.observe(this.stats.nativeElement);
     observer.observe(this.projects.nativeElement);
+    observer.observe(this.membersSection.nativeElement);
     observer.observe(this.collaborate.nativeElement);
   }
 
@@ -115,6 +162,14 @@ export class App implements AfterViewInit {
       });
     } else if (target === this.stats.nativeElement) {
       animate('.stat-card', {
+        opacity: [0, 1],
+        scale: [0.8, 1],
+        delay: stagger(150),
+        duration: 1000,
+        easing: 'easeOutBack'
+      });
+    } else if (target === this.membersSection.nativeElement) {
+      animate('.member-card', {
         opacity: [0, 1],
         scale: [0.8, 1],
         delay: stagger(150),
