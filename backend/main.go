@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -141,8 +142,14 @@ func main() {
 	http.HandleFunc("/api/metrics", metricsHandler)
 	http.HandleFunc("/api/members", membersHandler)
 
-	fmt.Println("🚀 Atomic Backend (Robust Mode) starting on :8080...")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	// Render asigna el puerto dinámicamente a través de la variable de entorno PORT
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // Fallback para desarrollo local
+	}
+
+	fmt.Printf("🚀 Atomic Backend (Robust Mode) starting on :%s...\n", port)
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		fmt.Printf("Error starting server: %s\n", err)
 	}
 }
