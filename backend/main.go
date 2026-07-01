@@ -29,10 +29,10 @@ type Member struct {
 
 // Caché simple para evitar el Rate Limit de GitHub
 var lastKnownMetrics Metrics = Metrics{
-	TotalStars:        0,
+	TotalStars:        11, // Valor real aproximado para evitar el 0 al inicio
 	TotalContributors: 4,
-	ActiveProjects:    0,
-	Status:            "Initializing",
+	ActiveProjects:    5,
+	Status:            "Cargando...",
 }
 
 func fetchGitHubMetrics() Metrics {

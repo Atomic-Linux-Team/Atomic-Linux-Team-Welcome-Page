@@ -71,15 +71,15 @@
             <h2 class="section-title">Actividad del Ecosistema 📊</h2>
             <div class="stats-grid">
                 <div class="stat-card" #s1>
-                    <div class="stat-value">{{ metrics?.total_stars || '...' }}</div>
+                    <div class="stat-value">{{ metrics?.total_stars !== null && metrics?.total_stars !== undefined ? metrics.total_stars : '...' }}</div>
                     <div class="stat-label">Estrellas Totales</div>
                 </div>
                 <div class="stat-card" #s2>
-                    <div class="stat-value">{{ metrics?.total_contributors || '...' }}</div>
+                    <div class="stat-value">{{ metrics?.total_contributors !== null && metrics?.total_contributors !== undefined ? metrics.total_contributors : '...' }}</div>
                     <div class="stat-label">Colaboradores</div>
                 </div>
                 <div class="stat-card" #s3>
-                    <div class="stat-value">{{ metrics?.active_projects || '...' }}</div>
+                    <div class="stat-value">{{ metrics?.active_projects !== null && metrics?.active_projects !== undefined ? metrics.active_projects : '...' }}</div>
                     <div class="stat-label">Proyectos Activos</div>
                 </div>
                 <div class="stat-card" #s4>
