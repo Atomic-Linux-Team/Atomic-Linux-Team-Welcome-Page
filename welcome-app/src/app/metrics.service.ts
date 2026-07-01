@@ -21,8 +21,8 @@ export interface Member {
   providedIn: 'root'
 })
 export class MetricsService {
-  private apiUrl = 'http://127.0.0.1:8080/api/metrics';
-  private membersUrl = 'http://127.0.0.1:8080/api/members';
+  private apiUrl = 'https://atomic-linux-team-welcome-page.onrender.com/api/metrics';
+  private membersUrl = 'https://atomic-linux-team-welcome-page.onrender.com/api/members';
 
   constructor(private http: HttpClient) {}
 
