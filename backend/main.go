@@ -37,8 +37,16 @@ var lastKnownMetrics Metrics = Metrics{
 
 func fetchGitHubMetrics() Metrics {
 	fmt.Println("🌐 Llamando a la API de GitHub...")
-	client := &http.Client{Timeout: 10 * time.Second}
+	client := &http.Client{Timeout: 15 * time.Second}
 	req, _ := http.NewRequest("GET", "https://api.github.com/orgs/Atomic-Linux-Team/repos", nil)
+	
+	// Usar Token de GitHub si está configurado en las variables de entorno de Render
+	token := os.Getenv("GITHUB_TOKEN")
+	if token != "" {
+		req.Header.Set("Authorization", "token "+token)
+		fmt.Println("🔑 Usando GitHub Token para autenticación")
+	}
+	
 	req.Header.Set("User-Agent", "Atomic-Backend-Bot")
 
 	resp, err := client.Do(req)
@@ -49,7 +57,7 @@ func fetchGitHubMetrics() Metrics {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		fmt.Printf("⚠️ GitHub respondió con error: %s\n", resp.Status)
+		fmt.Printf("⚠️ GitHub respondió con error: %s (Código: %d)\n", resp.Status, resp.StatusCode)
 		return lastKnownMetrics
 	}
 
@@ -72,7 +80,7 @@ func fetchGitHubMetrics() Metrics {
 	}
 
 	lastKnownMetrics = newMetrics
-	fmt.Printf("✅ Métricas actualizadas: %d estrellas, %d proyectos\n", totalStars, len(repos))
+	fmt.Printf("✅ Métricas actualizadas desde GitHub: %d estrellas, %d proyectos\n", totalStars, len(repos))
 	return newMetrics
 }
 
