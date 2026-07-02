@@ -63,7 +63,16 @@ _Una pregunta para alimentar la curiosidad del ser humano, jajajajaja_
 <img width="1920" height="1200" alt="imagen" src="https://github.com/user-attachments/assets/42f18f82-6061-4873-bd62-0e76b250d414" />
 
 ---
+#### Cosas por hacer <3
 
-Y bueno, eso es todo, ya se la saben, cuidence y hasta la próxima <3
+-[En desarrollo...] Sistema de noticias
+
+-[❎] Estadísticas más detalladas
+
+-[❎] Mejorar animaciones
+
+-[❎] Más información de los repositorios
+
+Y bueno, eso es todo, ya se la saben, cuidence y hasta la próxima :3
 
 > -- By Ange
