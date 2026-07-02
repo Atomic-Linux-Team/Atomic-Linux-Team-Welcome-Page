@@ -13,22 +13,22 @@ Pero bueno, vamos a desglosar esto, bueno, no desglosar pero sí van a ver un po
 
 <h3 align="center">Lenguajes y Frameworks que se están usando</h3>
 
-* **Frontend**: _Para el Frontend e estado usando una combinación bastante clasica en este mundo, solo que con un par de aditivos para que se viese mejor: HTML, CSS, JS(JavaScript), Angular(sí, ya se, pude haber usado React pero no, ¿Porqué no?, porque no se me dió la gana >:V, me gusta angular, que puedo decir, en sus versiónes más actuales es hasta más decente que React), Anime.JS(es un Framework de JS bastante conocido y que ofrece animaciones bastante increibles solo con hacer scroll), Node.JS(el indispensable en entornos JS) y TypeScript, ese es mi combo para el Frontend_
+* **Frontend**: _Para el Frontend he estado usando una combinación bastante clásica en este mundo, solo que con un par de aditivos para que se viese mejor: HTML, CSS, JS(JavaScript), Angular(sí, ya se, pude haber usado React pero no, ¿Porqué no?, porque no se me dió la gana >:V, me gusta angular, que puedo decir, en sus versiones más actuales es hasta más decente que React), Anime.JS(es un Framework de JS bastante conocido y que ofrece animaciones bastante increibles solo con hacer scroll), Node.JS(el indispensable en entornos JS) y TypeScript, ese es mi combo para el Frontend_
 
-* **Backend**: _Para el Backend es estado usando sola y llanamente **GO**, que ¿porqué Go?, es algo más de costumbre y facilidad de uso por mi parte, Go ofrece una sintaxis y funcionamiento bastante similar al de C además que es MUY rápido y bastante compatible, originalmente planeaba hacer el combo clasico de Rust + Go pero sería un dolor de cabeza para mantener y gestionar sus recursos, además que sigo aprendiendo a usar los tipados de Rust_
+* **Backend**: _Para el Backend he estado usando sola y llanamente **GO**, que ¿porqué Go?, es algo más de costumbre y facilidad de uso por mi parte, Go ofrece una sintaxis y funcionamiento bastante similar al de C además que es MUY rápido y bastante compatible, originalmente planeaba hacer el combo clasico de Rust + Go pero sería un dolor de cabeza para mantener y gestionar sus recursos, además que sigo aprendiendo a usar los tipados de Rust_
 
 ---
 
 <h3 align="center">Estado actual y Hosts que estoy usando</h3>
 
-Bien, entramos en la parte más complicada, XD, para mantener el Frontend, o sea, la página principal, estoy ocupando Netlify, que es gratuito, solo coloco como directorio raiz a *welcome-app*, el comando de compilación *npm run build* y el directorio de salida *welcome-app/dist/welcome-app/browser* y pues eso es lo que tengo en Netlify para el Frontend.
+Bien, entramos en la parte más complicada, XD, para mantener el Frontend, o sea, la página principal, estoy ocupando Netlify, que es gratuito, solo coloco como directorio raíz a *welcome-app*, el comando de compilación *npm run build* y el directorio de salida *welcome-app/dist/welcome-app/browser* y pues eso es lo que tengo en Netlify para el Frontend.
 
-Por otra parte está el Backend, que lo manejo desde Render (también gratuito pero, es muy jodido tener dos host para mantener la misma página web, XD), y al estar hecho enteramente en Go, es más rápido y facil (segun yo, no se, XD), como directorio raiz tengo la carpeta, pues, *backend* XD, como comando de compilación tengo a *go build -o main* y como comando de ejecución tengo a *./main* y también tengo una variable de entorno pero meh, solo sirve para conectarlo con GitHub
+Por otra parte está el Backend, que lo manejo desde Render (también gratuito pero, es muy jodido tener dos host para mantener la misma página web, XD), y al estar hecho enteramente en Go, es más rápido y fácil (según yo, no sé, XD), como directorio raíz tengo la carpeta, pues, *backend* XD, como comando de compilación tengo a *go build -o main* y como comando de ejecución tengo a *./main* y también tengo una variable de entorno pero meh, solo sirve para conectarlo con GitHub
 
 
-Bien, por el apartado actual, de su estado en como tal, especialmente de funcionamiento y apariencia, pues, bastante bien la vdd, aquí les quedán un par de ejemplos de como está quedando ahora mismo:
+Bien, por el apartado actual, de su estado en como tal, especialmente de funcionamiento y apariencia, pues, bastante bien la vdd, aquí les quedan un par de ejemplos de como está quedando ahora mismo:
 
-_Pagina de inicio, lo que ves de primero a la hora de iniciar la web, debajo del banner están los botones de unirse al discord, ir a la organización de Github y de ir al tutorial de como empezar a contribuir al proyecto_
+_Página de inicio, lo que ves de primero a la hora de iniciar la web, debajo del banner están los botones de unirse al discord, ir a la organización de Github y de ir al tutorial de como empezar a contribuir al proyecto_
 
 <img width="1920" height="1200" alt="imagen" src="https://github.com/user-attachments/assets/c299de59-f234-42c2-860f-c7ef3d25e434" />
 
@@ -46,7 +46,7 @@ _El estado de nuestros proyectos, aquí entra en juego el backend en Go_
 
 ---
 
-_Proyectos actuales en los que estámos trabajando_
+_Proyectos actuales en los que estamos trabajando_
 
 <img width="1920" height="1200" alt="imagen" src="https://github.com/user-attachments/assets/4a92ee79-8244-4ef5-85a2-947b6e9a24bd" />
 
