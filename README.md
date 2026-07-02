@@ -13,7 +13,7 @@ Pero bueno, vamos a desglosar esto, bueno, no desglosar pero sí van a ver un po
 
 <h3 align="center">Lenguajes y Frameworks que se están usando</h3>
 
-* **Frontend**: _Para el Frontend he estado usando una combinación bastante clásica en este mundo, solo que con un par de aditivos para que se viese mejor: HTML, CSS, JS(JavaScript), Angular(sí, ya sé, pude haber usado React pero no, ¿Por qué no?, porque no se me dió la gana >:V, me gusta angular, que puedo decir, en sus versiones más actuales es hasta más decente que React), Anime.JS(es un Framework de JS bastante conocido y que ofrece animaciones bastante increíbles solo con hacer scroll), Node.JS(el indispensable en entornos JS) y TypeScript, ese es mi combo para el Frontend_
+* **Frontend**: _Para el Frontend he estado usando una combinación bastante clásica en este mundo, solo que con un par de aditivos para que se viese mejor: HTML, CSS, JS(JavaScript), Angular(sí, ya sé, pude haber usado React pero no, ¿Por qué no?, porque no se me dio la gana >:V, me gusta angular, que puedo decir, en sus versiones más actuales es hasta más decente que React), Anime.JS(es un Framework de JS bastante conocido y que ofrece animaciones bastante increíbles solo con hacer scroll), Node.JS(el indispensable en entornos JS) y TypeScript, ese es mi combo para el Frontend_
 
 * **Backend**: _Para el Backend he estado usando sola y llanamente **GO**, que ¿Por qué Go?, es algo más de costumbre y facilidad de uso por mi parte, Go ofrece una sintaxis y funcionamiento bastante similar al de C además que es MUY rápido y bastante compatible, originalmente planeaba hacer el combo clásico de Rust + Go pero sería un dolor de cabeza para mantener y gestionar sus recursos, además que sigo aprendiendo a usar los tipados de Rust_
 
@@ -64,6 +64,6 @@ _Una pregunta para alimentar la curiosidad del ser humano, jajajajaja_
 
 ---
 
-Y bueno, eso es todo, ya se la saben, cuidencce y hasta la próxima <3
+Y bueno, eso es todo, ya se la saben, cuidence y hasta la próxima <3
 
 > -- By Ange
