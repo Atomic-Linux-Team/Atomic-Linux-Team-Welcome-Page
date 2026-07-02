@@ -1,8 +1,8 @@
-<h1 align="center">Pagina web del Atomic Linux Team</h1>
+<h1 align="center">Página web del Atomic Linux Team</h1>
 
 > *Una prueba de que la curiosidad y el aburrimiento traen cosas increibles <3*
   
-A ver, por pura curiosidad y aurrimiento se me dió por agarrar un proyecto bastante viejo que tenía, la idea era hacer una pagina web medianamente decente pero... creo que se me fué de las manos, JAJAJAJAJA
+A ver, por pura curiosidad y aburrimiento se me dió por agarrar un proyecto bastante viejo que tenía, la idea era hacer una página web medianamente decente pero... creo que se me fué de las manos, JAJAJAJAJA
 
 > [!NOTE]
 > Es MUY Posible que siga mejorando la web para brindar una mejor experiencia y/o integración de las funciones
@@ -13,17 +13,17 @@ Pero bueno, vamos a desglosar esto, bueno, no desglosar pero sí van a ver un po
 
 <h3 align="center">Lenguajes y Frameworks que se están usando</h3>
 
-* **Frontend**: _Para el Forntend e estado usando una combinación bastante clasica en este mundo, solo que con un par de aditivos para que se viese mejor: HTML, CSS, JS(JavaScript), Angular.JS(sí, ya se, pude haber usado React pero no, ¿Porqué no?, porque no se me dió la gana >:V, me gusta angular, que puedo decir), Anime.JS(es un Framework de JS bastante conocido y que ofrece animaciones bastante increibles solo con hacer scroll), Node.JS(el indispensable en entornos JS) y TypeScript, ese es mi combo para el Frontend_
+* **Frontend**: _Para el Frontend e estado usando una combinación bastante clasica en este mundo, solo que con un par de aditivos para que se viese mejor: HTML, CSS, JS(JavaScript), Angular(sí, ya se, pude haber usado React pero no, ¿Porqué no?, porque no se me dió la gana >:V, me gusta angular, que puedo decir, en sus versiónes más actuales es hasta más decente que React), Anime.JS(es un Framework de JS bastante conocido y que ofrece animaciones bastante increibles solo con hacer scroll), Node.JS(el indispensable en entornos JS) y TypeScript, ese es mi combo para el Frontend_
 
-* **Backend**: _Para el Backend es estado usando sola y llanamente **GO**, que ¿porqué Go?, es algo mas de costumbre y facilidad de uso por mi parte, Go ofrece una sintexis y funcionamiento bastante similar al de C además que es MUY rapido y bastante compatible, originalmente planeaba hacer el combo clasico de Rust + Go pero sería un dolor de cabeza para mantener y gestionar sus recursos, además que sigo aprendiendo a usar los tipados de Rust_
+* **Backend**: _Para el Backend es estado usando sola y llanamente **GO**, que ¿porqué Go?, es algo más de costumbre y facilidad de uso por mi parte, Go ofrece una sintaxis y funcionamiento bastante similar al de C además que es MUY rápido y bastante compatible, originalmente planeaba hacer el combo clasico de Rust + Go pero sería un dolor de cabeza para mantener y gestionar sus recursos, además que sigo aprendiendo a usar los tipados de Rust_
 
 ---
 
 <h3 align="center">Estado actual y Hosts que estoy usando</h3>
 
-Bien, entramos en la parte mas complicada, XD, para mantener el Frontend, osea, la pagina principal, estoy ocupando Netlify, que es gratuito, solo coloco como directorio raiz a *welcome-app*, el comando de compilación *npm run build* y el directorio de salida *welcome-app/dist/welcome-app/browser* y pues eso es lo que tengo en Netlify para el Frontend.
+Bien, entramos en la parte más complicada, XD, para mantener el Frontend, o sea, la página principal, estoy ocupando Netlify, que es gratuito, solo coloco como directorio raiz a *welcome-app*, el comando de compilación *npm run build* y el directorio de salida *welcome-app/dist/welcome-app/browser* y pues eso es lo que tengo en Netlify para el Frontend.
 
-Por otra parte está el Backend, que lo manejo desde Render (tambien gratuito pero, es muy jodido tener dos host para mantener la misma pagina web, XD), y al estar hacho enteramente en Go, es mas rapido y facil (segun yo, no se, XD), como directorio raiz tengo la carpeta, pues, *backend* XD, como comando de compilación tengo a *go build -o main* y como comando de ejecución tengo a *./main* y tambien tengo una variable de entorno pero meh, solo sirve para conectarlo con GitHub
+Por otra parte está el Backend, que lo manejo desde Render (también gratuito pero, es muy jodido tener dos host para mantener la misma página web, XD), y al estar hecho enteramente en Go, es más rápido y facil (segun yo, no se, XD), como directorio raiz tengo la carpeta, pues, *backend* XD, como comando de compilación tengo a *go build -o main* y como comando de ejecución tengo a *./main* y también tengo una variable de entorno pero meh, solo sirve para conectarlo con GitHub
 
 
 Bien, por el apartado actual, de su estado en como tal, especialmente de funcionamiento y apariencia, pues, bastante bien la vdd, aquí les quedán un par de ejemplos de como está quedando ahora mismo:
@@ -64,6 +64,6 @@ _Una pregunta para alimentar la curiosidad del ser humano, jajajajaja_
 
 ---
 
-Y bueno, eso es todo, ya se la saben, cuidencce y hasta la proxima <3
+Y bueno, eso es todo, ya se la saben, cuidencce y hasta la próxima <3
 
 > -- By Ange
